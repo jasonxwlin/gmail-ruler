@@ -1,0 +1,12 @@
+# OAuth 憑證與 token，絕對不要 commit
+gmailctl/credentials.json
+gmailctl/token.json
+gmailctl/backfill-token.json
+gmailctl/*.tmp
+
+__pycache__/
+.venv/
+.DS_Store
+
+# 規則內容含個人往來的寄件者，不進 git
+gmailctl/rules.json
