@@ -7,7 +7,15 @@
 - **套用到既有信件**：gmailctl 不支援這件事，這裡用 Gmail API 補上，先預覽每條規則會影響幾封信，確認後才執行
 
 ```
-gmr.py                 # 主程式
+gmr.py                 # 入口（python3 gmr.py …）
+gmailruler/            # 程式本體
+  config.py            #   路徑與選項表
+  prompts.py           #   互動輸入
+  rules.py             #   規則檔讀寫、驗證、轉中文句子與搜尋語法
+  gmail_api.py         #   Gmail API：授權、標籤、搜尋
+  commands.py          #   list / remove / diff / sync / backfill / preview / add
+  wizard.py            #   問答建立規則
+  cli.py               #   選單與指令分派
 gmailctl/              # gmailctl 設定目錄（gmailctl --config gmailctl）
   config.jsonnet       # 讀 rules.json 轉成 gmailctl 格式，一般不用改
   rules.json           # 規則本體，由 gmr.py 管理（含個人寄件者，不進 git，請自行備份）
